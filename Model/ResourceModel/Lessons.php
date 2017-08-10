@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Pavel Usachev <webcodekeeper@hotmail.com>
+ * @copyright Copyright (c) 2017, Pavel Usachev
+ */
 
 namespace Sysint\MagentoAcademy\Model\ResourceModel;
 
@@ -8,12 +12,7 @@ use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
 
 class Lessons extends AbstractDb
 {
-
-    /**
-     * Resource initialization
-     *
-     * @return void
-     */
+    /** {@inheritdoc} */
     protected function _construct()
     {
         $this->_init(LessonsInterface::TABLE_NAME, LessonsInterface::ID_FIELD);

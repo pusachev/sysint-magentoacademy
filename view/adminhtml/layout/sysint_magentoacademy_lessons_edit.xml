@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * @author Pavel Usachev <webcodekeeper@hotmail.com>
+ * @copyright Copyright (c) 2017, Pavel Usachev
+ */
+-->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../
 ../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">

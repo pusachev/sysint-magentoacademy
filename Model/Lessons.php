@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Pavel Usachev <webcodekeeper@hotmail.com>
+ * @copyright Copyright (c) 2017, Pavel Usachev
+ */
 
 namespace Sysint\MagentoAcademy\Model;
 
@@ -99,10 +103,5 @@ class Lessons extends AbstractModel implements LessonsInterface, IdentityInterfa
         $this->setData(LessonsInterface::SHORT_DESCRIPTION_FILED, $shortDescription);
 
         return $this;
-    }
-
-    public function save()
-    {
-
     }
 }
