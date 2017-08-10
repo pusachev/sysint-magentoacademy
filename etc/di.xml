@@ -1,0 +1,4 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Sysint\MagentoAcademy\Api\LessonsRepositoryInterface"
+                type="Sysint\MagentoAcademy\Model\LessonsRepository" />
+</config>

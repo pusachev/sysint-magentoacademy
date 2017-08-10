@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Sysint_MagentoAcademy::all" title="MagentoAcademy All" translate="title" sortOrder="30" >
+                    <resource id="Sysint_MagentoAcademy::grid" title="Lessons grid" translate="title" sortOrder="10" >
+                        <resource id="Sysint_MagentoAcademy::create" title="Lesson Create" translate="title" sortOrder="10" />
+                        <resource id="Sysint_MagentoAcademy::edit" title="Lesson Edit" translate="title" sortOrder="20" />
+                        <resource id="Sysint_MagentoAcademy::delete" title="Lesson Delete" translate="title" sortOrder="30" />
+                        <resource id="Sysint_MagentoAcademy::mass_delete" title="Mass Delete" translate="title" sortOrder="40" />
+                    </resource>
+                    <resource id="Sysint_MagentoAcademy::system_config" title="MagentoAcademy System Config" translate="title" sortOrder="40" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
