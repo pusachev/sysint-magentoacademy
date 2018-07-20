@@ -5,11 +5,47 @@
  * @copyright Copyright (c) 2017, Pavel Usachev
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Sysint_MagentoAcademy::all" title="MagentoAcademy" translate="title" module="Sysint_MagentoAcademy" sortOrder="20" dependsOnModule="Sysint_MagentoAcademy" resource="Sysint_MagentoAcademy::all"/>
-        <add id="Sysint_MagentoAcademy::grid" title="Lessons Grid" translate="title" module="Sysint_MagentoAcademy" sortOrder="10" parent="Sysint_MagentoAcademy::all" action="sysint_magentoacademy/lessons/index" resource="Sysint_MagentoAcademy::grid"/>
-        <add id="Sysint_MagentoAcademy::create" title="Create Lesson" translate="title" module="Sysint_MagentoAcademy" sortOrder="10" parent="Sysint_MagentoAcademy::all" action="sysint_magentoacademy/lessons/create" resource="Sysint_MagentoAcademy::create"/>
-        <add id="Sysint_MagentoAcademy::system_config" title="Config" translate="title" module="Sysint_MagentoAcademy" sortOrder="10" parent="Sysint_MagentoAcademy::all" action="adminhtml/system_config/edit/section/lessons" resource="Sysint_MagentoAcademy::system_config"/>
+        <add
+                id="Sysint_MagentoAcademy::all"
+                title="MagentoAcademy"
+                translate="title"
+                module="Sysint_MagentoAcademy"
+                sortOrder="20"
+                dependsOnModule="Sysint_MagentoAcademy"
+                resource="Sysint_MagentoAcademy::all"
+        />
+        <add
+                id="Sysint_MagentoAcademy::grid"
+                title="Lessons Grid"
+                translate="title"
+                module="Sysint_MagentoAcademy"
+                sortOrder="10"
+                parent="Sysint_MagentoAcademy::all"
+                action="sysint_magentoacademy/lessons/index"
+                resource="Sysint_MagentoAcademy::grid"
+        />
+        <add
+                id="Sysint_MagentoAcademy::create"
+                title="Create Lesson"
+                translate="title"
+                module="Sysint_MagentoAcademy"
+                sortOrder="10"
+                parent="Sysint_MagentoAcademy::all"
+                action="sysint_magentoacademy/lessons/create"
+                resource="Sysint_MagentoAcademy::create"
+        />
+        <add
+                id="Sysint_MagentoAcademy::system_config"
+                title="Config"
+                translate="title"
+                module="Sysint_MagentoAcademy"
+                sortOrder="10"
+                parent="Sysint_MagentoAcademy::all"
+                action="adminhtml/system_config/edit/section/lessons"
+                resource="Sysint_MagentoAcademy::system_config"
+        />
     </menu>
 </config>

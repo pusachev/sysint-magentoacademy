@@ -20,7 +20,6 @@ use Magento\Framework\View\Result\Page;
 
 use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
 use Sysint\MagentoAcademy\Api\LessonsRepositoryInterface;
-use Sysint\MagentoAcademy\Helper\Data;
 use Sysint\MagentoAcademy\Model\LessonsFactory;
 
 abstract class Lessons extends Action
@@ -36,9 +35,6 @@ abstract class Lessons extends Action
 
     /** @var PageFactory  */
     protected $pageFactory;
-
-    /** @var Data  */
-    protected $helper;
 
     /** @var  LessonsFactory */
     protected $modelFactory;
@@ -56,13 +52,11 @@ abstract class Lessons extends Action
     protected $logger;
 
     /**
-     * Lessons constructor.
      * @param Context                       $context
      * @param Registry                      $registry
      * @param PageFactory                   $pageFactory
      * @param LessonsRepositoryInterface    $lessonsRepository
      * @param LessonsFactory                $factory
-     * @param Data                          $helper
      * @param LoggerInterface               $logger
      */
     public function __construct(
@@ -71,15 +65,14 @@ abstract class Lessons extends Action
         PageFactory $pageFactory,
         LessonsRepositoryInterface $lessonsRepository,
         LessonsFactory $factory,
-        Data $helper,
         LoggerInterface $logger
     ){
         $this->registry       = $registry;
         $this->pageFactory    = $pageFactory;
         $this->repository     = $lessonsRepository;
         $this->modelFactory   = $factory;
-        $this->helper         = $helper;
         $this->logger         = $logger;
+
         parent::__construct($context);
     }
 

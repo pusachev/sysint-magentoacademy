@@ -12,6 +12,7 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 
 use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
+use Sysint\MagentoAcademy\Api\Data\LessonsSearchResultsInterface;
 
 interface LessonsRepositoryInterface
 {
@@ -30,7 +31,7 @@ interface LessonsRepositoryInterface
 
     /**
      * @param SearchCriteriaInterface $searchCriteria
-     * @return LessonsInterface[]
+     * @return LessonsSearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria);
 

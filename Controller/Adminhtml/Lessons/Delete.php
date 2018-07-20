@@ -21,7 +21,8 @@ class Delete extends BaseAction
                 $this->messageManager->addSuccessMessage(__('Lesson has been deleted.'));
             } catch (\Exception $e) {
                 $this->logger->error($e->getMessage());
-                $this->messageManager->addErrorMessage(_('Lesson can\'t delete'));return $this->doRefererRedirect();
+                $this->messageManager->addErrorMessage(_('Lesson can\'t delete'));
+                return $this->doRefererRedirect();
             }
         } else {
             $this->logger->error(

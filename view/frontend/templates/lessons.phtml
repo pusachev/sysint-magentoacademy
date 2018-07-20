@@ -3,5 +3,26 @@
  * @author Pavel Usachev <webcodekeeper@hotmail.com>
  * @copyright Copyright (c) 2017, Pavel Usachev
  */
+/** @var $block \Sysint\MagentoAcademy\Block\LessonsList */
+
+$searchResult = $block->getActualLessonsList();
+
 ?>
 
+<div id="lessons-list">
+    <h1><?= __('Lessons') ?></h1>
+    <?php if ($searchResult->getTotalCount()  === 0): ?>
+        <p><?= __('Actual lessons not found') ?></p>
+    <?php else: ?>
+    <ul>
+        <?php foreach ($searchResult->getItems() as $item): ?>
+            <?php /** @var \Sysint\MagentoAcademy\Api\Data\LessonsInterface $item */ ?>
+            <li>
+                <h2><?= $item->getTitle() ?></h2>
+                <p><?= $item->getSpeaker() ?></p>
+                <p><?= $item->getShortDescription() ?></p>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+</div>

@@ -7,14 +7,19 @@
 namespace Sysint\MagentoAcademy\Model;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
+
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
+use Sysint\MagentoAcademy\Api\Data\LessonsSearchResultsInterface;
 use Sysint\MagentoAcademy\Api\LessonsRepositoryInterface;
+use Sysint\MagentoAcademy\Api\Data\LessonsSearchResultsInterfaceFactory;
 use Sysint\MagentoAcademy\Model\ResourceModel\Lessons as ResourceModel;
 use Sysint\MagentoAcademy\Model\LessonsFactory;
+use Sysint\MagentoAcademy\Model\ResourceModel\Lessons\CollectionFactory;
 
 class LessonsRepository implements LessonsRepositoryInterface
 {
@@ -24,12 +29,27 @@ class LessonsRepository implements LessonsRepositoryInterface
     /** @var LessonsFactory  */
     protected $lessonsFactory;
 
+    /** @var CollectionProcessorInterface */
+    protected $collectionProcessor;
+
+    /** @var CollectionFactory */
+    protected $collectionFactory;
+
+    /** @var LessonsSearchResultsInterfaceFactory */
+    protected $searchResultsFactory;
+
     public function __construct(
         ResourceModel $resource,
-        LessonsFactory $lessonsFactory
+        LessonsFactory $lessonsFactory,
+        CollectionProcessorInterface $collectionProcessor,
+        CollectionFactory $collectionFactory,
+        LessonsSearchResultsInterfaceFactory $lessonsSearchResultsFactory
     ) {
-        $this->resource         = $resource;
-        $this->lessonsFactory   = $lessonsFactory;
+        $this->resource                 = $resource;
+        $this->lessonsFactory           = $lessonsFactory;
+        $this->collectionProcessor      = $collectionProcessor;
+        $this->collectionFactory        = $collectionFactory;
+        $this->searchResultsFactory     = $lessonsSearchResultsFactory;
     }
 
     /** {@inheritdoc} */
@@ -45,10 +65,7 @@ class LessonsRepository implements LessonsRepositoryInterface
         return $lessons;
     }
 
-    /**
-     * @param int $id
-     * @return LessonsRepositoryInterface
-     */
+    /** {@inheritdoc} */
     public function deleteById($id)
     {
         $this->delete($this->getById($id));
@@ -57,7 +74,16 @@ class LessonsRepository implements LessonsRepositoryInterface
     /** {@inheritdoc} */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
-        // TODO: Implement getList() method.
+        $collection = $this->collectionFactory->create();
+
+        $this->collectionProcessor->process($searchCriteria, $collection);
+
+        $searchResults = $this->searchResultsFactory->create();
+        $searchResults->setSearchCriteria($searchCriteria);
+        $searchResults->setItems($collection->getItems());
+        $searchResults->setTotalCount($collection->getSize());
+
+        return $searchResults;
     }
 
     /** {@inheritdoc} */

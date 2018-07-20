@@ -21,10 +21,14 @@ interface LessonsInterface
 
     const REGISTRY_KEY              = 'sysint_magentoacademy_lesson';
 
-    /** @return int */
+    /**
+     * @return mixed
+     */
     public function getId();
 
-    /** @return string */
+    /**
+     * @return mixed
+     */
     public function getTitle();
 
     /**
@@ -33,7 +37,9 @@ interface LessonsInterface
      */
     public function setTitle($title);
 
-    /** @return string */
+    /**
+     * @return mixed
+     */
     public function getSpeaker();
 
     /**
@@ -42,7 +48,9 @@ interface LessonsInterface
      */
     public function setSpeaker($name);
 
-    /** @return \DateTime */
+    /**
+     * @return mixed
+     */
     public function getStartDate();
 
     /**

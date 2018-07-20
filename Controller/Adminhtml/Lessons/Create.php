@@ -16,6 +16,7 @@ class Create extends BaseAction
     const PAGE_TITLE        = 'Add Lesson';
     const BREADCRUMB_TITLE  = 'Add Lesson';
 
+    /** {@inheritdoc} */
     public function execute()
     {
         $model = $this->getModel();

@@ -5,7 +5,8 @@
  * @copyright Copyright (c) 2017, Pavel Usachev
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="sysint_magentoacademy" translate="label" sortOrder="1000">
             <label>Magento Academy</label>
@@ -14,9 +15,25 @@
             <label>Lessons</label>
             <tab>sysint_magentoacademy</tab>
             <resource>Sysint_MagentoAcademy::system_config</resource>
-            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group
+                    id="general"
+                    translate="label"
+                    type="text"
+                    sortOrder="10"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1"
+            >
                 <label>General</label>
-                <field id="is_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field
+                        id="is_enabled"
+                        translate="label"
+                        type="select"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                >
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
