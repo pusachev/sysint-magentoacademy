@@ -7,6 +7,7 @@
 namespace Sysint\MagentoAcademy\DataProvider;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
+use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
 use Sysint\MagentoAcademy\Model\ResourceModel\Lessons\CollectionFactory;
 
 class LessonsProvider extends AbstractDataProvider
@@ -33,6 +34,21 @@ class LessonsProvider extends AbstractDataProvider
 
     public function getData()
     {
-        return [];
+        if (isset($this->loadedData)) {
+            return $this->loadedData;
+        }
+
+        $items = $this->collection->getItems();
+
+        if (count($items) === 0) {
+            return [];
+        }
+
+        /** @var $lesson LessonsInterface */
+        foreach ($items as $lesson) {
+            $this->loadedData[$lesson->getId()] = $lesson->getData();
+        }
+
+        return $this->loadedData;
     }
 }
