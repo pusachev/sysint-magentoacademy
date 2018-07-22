@@ -13,4 +13,14 @@
                 type="Sysint\MagentoAcademy\Model\LessonsRepository" />
     <preference for="Sysint\MagentoAcademy\Api\Data\LessonsSearchResultsInterface"
                 type="Magento\Framework\Api\SearchResults" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item
+                        name="lessons_grid_listing_data_source"
+                        xsi:type="string"
+                >Sysint\MagentoAcademy\Model\ResourceModel\Lessons\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

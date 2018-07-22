@@ -28,6 +28,16 @@
                 resource="Sysint_MagentoAcademy::grid"
         />
         <add
+                id="Sysint_MagentoAcademy::uiGrid"
+                title="Lessons UI Grid"
+                translate="title"
+                module="Sysint_MagentoAcademy"
+                sortOrder="10"
+                parent="Sysint_MagentoAcademy::all"
+                action="sysint_magentoacademy/lessons/listing"
+                resource="Sysint_MagentoAcademy::grid"
+        />
+        <add
                 id="Sysint_MagentoAcademy::create"
                 title="Create Lesson"
                 translate="title"
