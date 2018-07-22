@@ -6,6 +6,7 @@
 
 namespace Sysint\MagentoAcademy\Controller\Adminhtml\Lessons;
 
+use Magento\Deploy\Package\Processor\PreProcessor\Less;
 use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
 use Sysint\MagentoAcademy\Controller\Adminhtml\Lessons as BaseAction;
 
@@ -14,7 +15,7 @@ class Save extends BaseAction
     /** {@inheritdoc} */
     public function execute()
     {
-        $isPost = $this->getRequest()->getPost();
+        $isPost = $this->getRequest()->isPost();
 
         if ($isPost) {
             $model = $this->getModel();
@@ -23,6 +24,8 @@ class Save extends BaseAction
             if(!empty($formData[LessonsInterface::ID_FIELD])) {
                 $id = $formData[LessonsInterface::ID_FIELD];
                 $model = $this->repository->getById($id);
+            } else {
+                unset($formData[LessonsInterface::ID_FIELD]);
             }
 
             $model->setData($formData);

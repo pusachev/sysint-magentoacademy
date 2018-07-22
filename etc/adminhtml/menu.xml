@@ -48,6 +48,16 @@
                 resource="Sysint_MagentoAcademy::create"
         />
         <add
+                id="Sysint_MagentoAcademy::ui_create"
+                title="UI Create Lesson"
+                translate="title"
+                module="Sysint_MagentoAcademy"
+                sortOrder="10"
+                parent="Sysint_MagentoAcademy::all"
+                action="sysint_magentoacademy/lessons/uicreate"
+                resource="Sysint_MagentoAcademy::create"
+        />
+        <add
                 id="Sysint_MagentoAcademy::system_config"
                 title="Config"
                 translate="title"

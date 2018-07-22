@@ -14,7 +14,6 @@ use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
-use Sysint\MagentoAcademy\Api\Data\LessonsSearchResultsInterface;
 use Sysint\MagentoAcademy\Api\LessonsRepositoryInterface;
 use Sysint\MagentoAcademy\Api\Data\LessonsSearchResultsInterfaceFactory;
 use Sysint\MagentoAcademy\Model\ResourceModel\Lessons as ResourceModel;
