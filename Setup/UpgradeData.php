@@ -70,13 +70,12 @@ class UpgradeData implements UpgradeDataInterface
 
         $data = $this->repository->getList($searchCriteria);
 
-        foreach ($data->getItems() as $lesson) {
-            $lesson->setCount(1);
-        }
-
         $collection = $this->collectionFactory->create();
 
-        $collection->setData($data->getItems());
+        foreach ($data->getItems() as $lesson) {
+            $lesson->setCount(1);
+            $collection->addItem($lesson);
+        }
 
         try {
             $collection->save();

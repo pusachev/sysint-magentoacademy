@@ -6,6 +6,8 @@
 
 namespace Sysint\MagentoAcademy\Setup;
 
+use Psr\Log\LoggerInterface;
+
 use Magento\Framework\DB\Ddl\Table;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
@@ -15,6 +17,14 @@ use Sysint\MagentoAcademy\Api\Data\LessonsInterface;
 
 class UpgradeSchema implements UpgradeSchemaInterface
 {
+
+    private $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
     /**
      * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
