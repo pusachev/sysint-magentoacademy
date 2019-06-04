@@ -104,4 +104,18 @@ class Lessons extends AbstractModel implements LessonsInterface, IdentityInterfa
 
         return $this;
     }
+
+    /** {@inheritDoc} */
+    public function setCount($count)
+    {
+        $this->setData(LessonsInterface::COUNT_FIELD, $count);
+
+        return $this;
+    }
+
+    /** {@inheritDoc} */
+    public function getCount()
+    {
+        return $this->getData(LessonsInterface::COUNT_FIELD);
+    }
 }

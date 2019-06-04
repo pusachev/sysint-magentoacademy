@@ -16,6 +16,7 @@ interface LessonsInterface
     const START_DATE_FIELD          = 'start_date';
     const END_DATE_FIELD            = 'end_date';
     const SHORT_DESCRIPTION_FILED   = 'short_description';
+    const COUNT_FIELD               = 'count';
 
     const CACHE_TAG                 = 'sysint_magentoacademy';
 
@@ -80,4 +81,15 @@ interface LessonsInterface
      * @return LessonsInterface
      */
     public function setShortDescription($shortDescription);
+
+    /**
+     * @param int $count
+     * @return LessonsInterface
+     */
+    public function setCount($count);
+
+    /**
+     * @return int
+     */
+    public function getCount();
 }
