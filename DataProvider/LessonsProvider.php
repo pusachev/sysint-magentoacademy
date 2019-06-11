@@ -40,7 +40,7 @@ class LessonsProvider extends AbstractDataProvider
 
         $items = $this->collection->getItems();
 
-        if (count($items) === 0) {
+        if (empty($items)) {
             return [];
         }
 

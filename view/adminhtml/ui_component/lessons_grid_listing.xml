@@ -179,7 +179,7 @@
                 </item>
             </argument>
         </column>
-        <actionsColumn name="actions" class="Sysint\MagentoAcademy\Ui\Component\Listing\Column\Actions">
+        <actionsColumn name="actions" class="Sysint\MagentoAcademy\UI\Component\Listing\Column\Actions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">lesson_id</item>
