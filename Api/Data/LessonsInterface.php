@@ -45,7 +45,7 @@ interface LessonsInterface
 
     /**
      * @param string $name
-     * @return LessonsInterface
+     * @return \Sysint\MagentoAcademy\Api\Data\LessonsInterface
      */
     public function setSpeaker($name);
 
@@ -56,7 +56,7 @@ interface LessonsInterface
 
     /**
      * @param \DateTime|string $statDate
-     * @return LessonsInterface
+     * @return \Sysint\MagentoAcademy\Api\Data\LessonsInterface
      */
     public function setStartDate($statDate);
 
@@ -67,7 +67,7 @@ interface LessonsInterface
 
     /**
      * @param \DateTime|string $endDate
-     * @return LessonsInterface
+     * @return \Sysint\MagentoAcademy\Api\Data\LessonsInterface
      */
     public function setEndDate($endDate);
 
@@ -78,13 +78,13 @@ interface LessonsInterface
 
     /**
      * @param string $shortDescription
-     * @return LessonsInterface
+     * @return \Sysint\MagentoAcademy\Api\Data\LessonsInterface
      */
     public function setShortDescription($shortDescription);
 
     /**
      * @param int $count
-     * @return LessonsInterface
+     * @return \Sysint\MagentoAcademy\Api\Data\LessonsInterface
      */
     public function setCount($count);
 
