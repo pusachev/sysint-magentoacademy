@@ -93,7 +93,7 @@
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
-                    <item name="saveUrl" xsi:type="url" path="*/*/save"/>
+                    <item name="saveUrl" xsi:type="url" path="*/*/InlineEdit"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">lesson_id</param>
