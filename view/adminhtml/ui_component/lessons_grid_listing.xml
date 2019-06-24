@@ -66,7 +66,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="magentoacademy/index/massDelete"/>
+                        <item name="url" xsi:type="url" path="magentoacademy/lessons/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete items</item>
                             <item name="message" xsi:type="string" translate="true">Are you sure you want to delete selected items?</item>
@@ -93,12 +93,12 @@
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
-                    <item name="saveUrl" xsi:type="url" path="*/*/inlineSave"/>
+                    <item name="saveUrl" xsi:type="url" path="*/*/save"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">lesson_id</param>
                 <param name="enabled" xsi:type="boolean">true</param>
-                <param name="selectProvider" xsi:type="string">lessons_grid_listing.news_grid_listing.lessons_grid_columns.ids</param>
+                <param name="selectProvider" xsi:type="string">lessons_grid_listing.lessons_grid_listing.lessons_grid_columns.ids</param>
             </editorConfig>
             <childDefaults>
                 <param name="fieldAction" xsi:type="array">

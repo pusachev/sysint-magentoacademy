@@ -145,6 +145,6 @@ abstract class Lessons extends Action
      */
     protected function redirectToGrid()
     {
-        return $this->_redirect('*/*/');
+        return $this->_redirect('*/*/listing');
     }
 }
