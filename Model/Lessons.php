@@ -15,6 +15,11 @@ use Sysint\MagentoAcademy\Model\ResourceModel\Lessons as ResourceModel;
 
 class Lessons extends AbstractModel implements LessonsInterface, IdentityInterface
 {
+    /**
+     * No route page id
+     */
+    const NOROUTE_PAGE_ID = 'no-route';
+
     /** {@inheritdoc} */
     public function _construct()
     {
@@ -118,4 +123,6 @@ class Lessons extends AbstractModel implements LessonsInterface, IdentityInterfa
     {
         return $this->getData(LessonsInterface::COUNT_FIELD);
     }
+
+
 }
